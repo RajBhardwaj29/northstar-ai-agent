@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Northstar AI Sales Agent</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+</head>
+
+<body>
+
+    <main class="app-shell">
+
+        <section class="chat-panel">
+
+            <header class="chat-header">
+                <div>
+                    <p class="eyebrow">NORTHSTAR HOMES</p>
+                    <h1>AI Sales Agent</h1>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+            </header>
+
+            <div
+                id="chatMessages"
+                class="chat-messages"
+            >
+                <div class="message agent-message">
+                    <div class="message-label">
+                        Northstar AI
+                    </div>
+
+                    <div class="message-bubble">
+                        Hi! I can help you with Northstar One in Sector 79,
+                        Gurugram. What are you looking for?
+                    </div>
+                </div>
+            </div>
+
+            <div
+                id="typingIndicator"
+                class="typing-indicator hidden"
+            >
+                Northstar AI is typing...
+            </div>
+
+            <form
+                id="chatForm"
+                class="chat-form"
+            >
+                <input
+                    id="messageInput"
+                    type="text"
+                    autocomplete="off"
+                    placeholder="Type your message..."
+                    required
+                >
+
+                <button
+                    id="sendButton"
+                    type="submit"
+                >
+                    Send
+                </button>
+            </form>
+
+            <div class="quick-tests">
+
+                <button
+                    class="quick-test"
+                    data-message="3 BHK chahiye, mera budget 2 crore hai aur khud ke liye dekh raha hoon"
+                >
+                    Hinglish lead
+                </button>
+
+                <button
+                    class="quick-test"
+                    data-message="What is the possession date?"
+                >
+                    Unknown question
+                </button>
+
+                <button
+                    class="quick-test"
+                    data-message="I want a site visit on Saturday at 11 AM"
+                >
+                    Book visit
+                </button>
+
+                <button
+                    class="quick-test danger"
+                    data-message="Mujhe dobara call mat karna"
+                >
+                    Do not contact
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <aside class="lead-panel">
+
+            <div class="lead-header">
+                <p class="eyebrow">LIVE ANALYTICS</p>
+                <h2>Lead State</h2>
+            </div>
+
+            <div class="lead-card">
+
+                <div class="state-row">
+                    <span>Language</span>
+                    <strong id="stateLanguage">Unknown</strong>
+                </div>
+
+                <div class="state-row">
+                    <span>Configuration</span>
+                    <strong id="stateConfiguration">—</strong>
+                </div>
+
+                <div class="state-row">
+                    <span>Budget</span>
+                    <strong id="stateBudget">—</strong>
+                </div>
+
+                <div class="state-row">
+                    <span>Purpose</span>
+                    <strong id="statePurpose">—</strong>
+                </div>
+
+                <div class="state-row">
+                    <span>Interest</span>
+                    <strong id="stateInterest">Unknown</strong>
+                </div>
+
+                <div class="state-row">
+                    <span>Site Visit</span>
+                    <strong id="stateVisit">Not requested</strong>
+                </div>
+
+                <div class="state-row">
+                    <span>Follow-up</span>
+                    <strong id="stateFollowup">No</strong>
+                </div>
+
+                <div class="state-row">
+                    <span>Human Escalation</span>
+                    <strong id="stateEscalation">No</strong>
+                </div>
+
+                <div class="state-row">
+                    <span>Do Not Contact</span>
+                    <strong id="stateDnc">No</strong>
+                </div>
+
+            </div>
+
+
+            <div class="analytics-card">
+
+                <div class="analytics-heading">
+                    <h3>Lead Score</h3>
+
+                    <strong
+                        id="leadScore"
+                        class="score"
+                    >
+                        0
+                    </strong>
+                </div>
+
+                <div class="score-bar">
+                    <div
+                        id="scoreFill"
+                        class="score-fill"
+                    ></div>
+                </div>
+
+                <p
+                    id="analyticsStatus"
+                    class="analytics-status"
+                >
+                    Start a conversation to qualify this lead.
+                </p>
+
+            </div>
+
+
+            <button
+                id="newConversation"
+                class="secondary-button"
+            >
+                New Conversation
+            </button>
+
+        </aside>
+
+    </main>
+
+    <script src="/static/app.js"></script>
+
+</body>
+</html>
